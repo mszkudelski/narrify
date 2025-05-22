@@ -12,8 +12,11 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+        .hero-gradient {
+             background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); /* slate-900 to slate-800 */
+        }
         .section-gradient {
-             background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+             background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); /* slate-800 to slate-900 */
         }
         .cta-button {
             transition: all 0.3s ease;
@@ -27,35 +30,36 @@
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1); /* Adjusted shadow for dark */
         }
         /* Basic styling for the audio player (if controls were visible) */
         audio::-webkit-media-controls-panel {
-            background-color: #f3f4f6; /* Tailwind gray-100 */
+            background-color: #374151; /* Tailwind gray-700 */
             border-radius: 0.5rem; /* Tailwind rounded-lg */
         }
         audio::-webkit-media-controls-play-button,
         audio::-webkit-media-controls-mute-button {
-            background-color: #3b82f6; /* Tailwind blue-500 */
+            background-color: #0ea5e9; /* Tailwind sky-500 */
             border-radius: 50%;
             color: white;
         }
         audio::-webkit-media-controls-timeline {
-            background-color: #d1d5db; /* Tailwind gray-300 */
+            background-color: #4b5563; /* Tailwind gray-600 */
             border-radius: 0.25rem; /* Tailwind rounded-md */
         }
         audio::-webkit-media-controls-current-time-display,
         audio::-webkit-media-controls-time-remaining-display {
-            color: #1f2937; /* Tailwind gray-800 */
+            color: #d1d5db; /* Tailwind gray-300 */
             font-size: 0.875rem; /* Tailwind text-sm */
         }
         /* Focus states for accessibility */
         *:focus-visible {
-            outline: 2px solid #2563eb; /* Tailwind blue-600 */
+            outline: 2px solid #0ea5e9; /* Tailwind sky-500 */
             outline-offset: 2px;
         }
         .sentence-highlight {
-            background-color: #bae6fd; /* Tailwind sky-200 */
+            background-color: #0369a1; /* Tailwind sky-700 */
+            color: #f0f9ff; /* Tailwind sky-50 */
             transition: background-color 0.3s ease;
             padding: 2px 4px;
             border-radius: 4px;
@@ -67,41 +71,41 @@
             transition: all 0.2s ease;
         }
         .speed-control-btn.speed-active {
-            background-color: #3b82f6; /* Tailwind blue-500 */
+            background-color: #0ea5e9; /* Tailwind sky-500 */
             color: white;
         }
         
         /* Language toggle button styles */
         .active-lang {
-            background-color: #dbeafe; /* Tailwind blue-100 */
+            background-color: #0ea5e9; /* Tailwind sky-500 */
             font-weight: 600;
-            color: #1d4ed8; /* Tailwind blue-700 */
+            color: white; /* Tailwind white */
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-gray-900 text-gray-300 antialiased">
 
-    <header class="sticky top-0 bg-white/80 backdrop-blur-md z-50 shadow-sm py-4 px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 bg-gray-900/80 backdrop-blur-md z-50 shadow-sm py-4 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-sky-700">Narrify</a>
+            <a href="#" class="text-3xl font-bold text-sky-500">Narrify</a>
             <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#problem" class="text-gray-700 hover:text-sky-600 transition-colors">Problem</a>
-                <a href="#how-it-works" class="text-gray-700 hover:text-sky-600 transition-colors">How it Works</a>
-                <a href="#demo" class="text-gray-700 hover:text-sky-600 transition-colors">Demo</a>
-                <a href="#about-me" class="text-gray-700 hover:text-sky-600 transition-colors">About Me</a>
-                <a href="#signup" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg cta-button">Join Beta</a>
+                <a href="#problem" class="text-gray-300 hover:text-sky-400 transition-colors">Problem</a>
+                <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 transition-colors">How it Works</a>
+                <a href="#demo" class="text-gray-300 hover:text-sky-400 transition-colors">Demo</a>
+                <a href="#about-me" class="text-gray-300 hover:text-sky-400 transition-colors">About Me</a>
+                <a href="#signup" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-lg cta-button">Join Beta</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-sky-600 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-sky-400 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white shadow-lg rounded-lg p-4">
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-gray-800 shadow-lg rounded-lg p-4">
             <nav class="flex flex-col space-y-2">
-                <a href="#problem" class="block px-3 py-2 text-gray-700 hover:bg-sky-50 rounded-md">Problem</a>
-                <a href="#how-it-works" class="block px-3 py-2 text-gray-700 hover:bg-sky-50 rounded-md">How it Works</a>
-                <a href="#demo" class="block px-3 py-2 text-gray-700 hover:bg-sky-50 rounded-md">Demo</a>
-                <a href="#about-me" class="block px-3 py-2 text-gray-700 hover:bg-sky-50 rounded-md">About Me</a>
-                <a href="#signup" class="block mt-2 px-3 py-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-lg text-center cta-button">Join Beta</a>
+                <a href="#problem" class="block px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-sky-400 rounded-md">Problem</a>
+                <a href="#how-it-works" class="block px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-sky-400 rounded-md">How it Works</a>
+                <a href="#demo" class="block px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-sky-400 rounded-md">Demo</a>
+                <a href="#about-me" class="block px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-sky-400 rounded-md">About Me</a>
+                <a href="#signup" class="block mt-2 px-3 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg text-center cta-button">Join Beta</a>
             </nav>
         </div>
     </header>
@@ -112,28 +116,28 @@
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <!-- Left column: Text content -->
                     <div class="text-center md:text-left relative z-10">
-                        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-                            Stay Focused. <span class="text-sky-600">Read Faster.</span>
+                        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-gray-100">
+                            Stay Focused. <span class="text-sky-500">Read Faster.</span>
                         </h1>
-                        <p class="text-lg md:text-xl max-w-2xl mx-auto md:mx-0 mb-10">
+                        <p class="text-lg md:text-xl max-w-2xl mx-auto md:mx-0 mb-10 text-gray-300">
                             Narrify helps you absorb online content without distractions. Listen to webpages in a natural voice — while eating, walking, or working.
                         </p>
                         
                         <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto md:mx-0 flex flex-col sm:flex-row gap-4 mb-8" id="hero-signup">
                             <label for="hero-email" class="sr-only">Email address</label>
                             <input type="email" name="email" id="hero-email" required
-                                class="flex-grow px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
+                                class="flex-grow px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
                                 placeholder="you@example.com">
                             <button type="submit"
-                                    class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
+                                    class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
                                 Join the beta
                             </button>
                         </form>
-                        <p id="hero-form-status" class="mt-4 text-sm text-gray-100 h-5"></p>
+                        <p id="hero-form-status" class="mt-4 text-sm text-gray-400 h-5"></p>
                         
                         <div class="mt-4 mb-8 md:mb-0">
-                            <a href="#demo" class="inline-flex items-center gap-2 bg-white/30 hover:bg-white/40 text-white font-semibold py-3 px-6 rounded-lg transition-all backdrop-blur-sm border border-white/40">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                            <a href="#demo" class="inline-flex items-center gap-2 bg-slate-700/50 hover:bg-slate-600/60 text-gray-100 font-semibold py-3 px-6 rounded-lg transition-all backdrop-blur-sm border border-slate-600/50">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                                 </svg>
                                 <span>Watch Demo</span>
@@ -143,61 +147,61 @@
 
                     <!-- Right column: App mockup -->
                     <div class="hidden md:block relative z-10">
-                        <div class="app-mockup bg-white p-4 rounded-xl shadow-xl">
+                        <div class="app-mockup bg-gray-700 p-4 rounded-xl shadow-xl">
                             <!-- Browser mockup with Narrify interface -->
-                            <div class="bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
+                            <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-600">
                                 <!-- Browser top bar -->
-                                <div class="bg-gray-200 px-4 py-2 flex items-center gap-2">
+                                <div class="bg-gray-600 px-4 py-2 flex items-center gap-2">
                                     <div class="flex gap-1.5">
-                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-red-500"></div> <!-- Adjusted for visibility -->
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div> <!-- Adjusted for visibility -->
+                                        <div class="w-3 h-3 rounded-full bg-green-500"></div> <!-- Adjusted for visibility -->
                                     </div>
-                                    <div class="ml-4 flex-grow bg-white rounded-md px-3 py-1 text-xs text-gray-500 text-center">
+                                    <div class="ml-4 flex-grow bg-gray-700 rounded-md px-3 py-1 text-xs text-gray-300 text-center">
                                         article.example.com
                                     </div>
                                 </div>
                                 
                                 <!-- Browser content area with article and Narrify controls -->
-                                <div class="p-4 bg-white">
+                                <div class="p-4 bg-gray-800">
                                     <div class="flex justify-between items-start mb-4">
-                                        <h3 class="text-lg font-bold text-gray-800">Article Title</h3>
-                                        <div class="bg-sky-500 text-white rounded-full px-3 py-1 text-xs">Narrify</div>
+                                        <h3 class="text-lg font-bold text-gray-100">Article Title</h3>
+                                        <div class="bg-sky-600 text-white rounded-full px-3 py-1 text-xs">Narrify</div>
                                     </div>
                                     
                                     <div class="space-y-2 mb-6">
-                                        <div class="h-2 bg-gray-200 rounded w-full"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-5/6"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-4/6"></div>
-                                        <div class="h-2 bg-sky-200 rounded w-full"></div>
-                                        <div class="h-2 bg-sky-200 rounded w-5/6"></div>
-                                        <div class="h-2 bg-sky-200 rounded w-full"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-3/6"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-full"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-full"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-5/6"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-4/6"></div>
+                                        <div class="h-2 bg-sky-700 rounded w-full"></div> <!-- Darker highlight -->
+                                        <div class="h-2 bg-sky-700 rounded w-5/6"></div> <!-- Darker highlight -->
+                                        <div class="h-2 bg-sky-700 rounded w-full"></div> <!-- Darker highlight -->
+                                        <div class="h-2 bg-gray-600 rounded w-3/6"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-full"></div>
                                     </div>
                                     
                                     <!-- Narrify player widget -->
-                                    <div class="bg-sky-50 border border-sky-100 rounded-lg p-3 mb-4 shadow-sm">
+                                    <div class="bg-sky-800/30 border border-sky-700 rounded-lg p-3 mb-4 shadow-sm">
                                         <div class="flex items-center justify-between">
                                             <div class="flex items-center gap-3">
-                                                <div class="bg-sky-500 rounded-full w-8 h-8 flex items-center justify-center">
+                                                <div class="bg-sky-600 rounded-full w-8 h-8 flex items-center justify-center">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                                                     </svg>
                                                 </div>
-                                                <div class="text-xs text-sky-800">Now reading highlighted text...</div>
+                                                <div class="text-xs text-sky-300">Now reading highlighted text...</div>
                                             </div>
-                                            <div class="text-xs text-sky-800">1.25x</div>
+                                            <div class="text-xs text-sky-300">1.25x</div>
                                         </div>
-                                        <div class="mt-2 bg-sky-200 rounded-full h-1.5">
+                                        <div class="mt-2 bg-sky-700/50 rounded-full h-1.5">
                                             <div class="bg-sky-500 h-1.5 rounded-full w-1/3"></div>
                                         </div>
                                     </div>
                                     
                                     <div class="space-y-2">
-                                        <div class="h-2 bg-gray-200 rounded w-full"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-4/6"></div>
-                                        <div class="h-2 bg-gray-200 rounded w-5/6"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-full"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-4/6"></div>
+                                        <div class="h-2 bg-gray-600 rounded w-5/6"></div>
                                     </div>
                                 </div>
                             </div>
@@ -209,58 +213,58 @@
 
         <section id="problem" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-gradient">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-16">
-                    Hard to focus on long texts? <span class="text-sky-700">Let your ears take over.</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-100 mb-16">
+                    Hard to focus on long texts? <span class="text-sky-500">Let your ears take over.</span>
                 </h2>
                 <div class="grid md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-left">
-                        <div class="bg-sky-100 text-sky-700 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-hover text-left">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Instant audio in your browser</h3>
-                        <p class="text-gray-700">Narrify turns any webpage into voice — no extra apps, no copy-paste. Stay where you are.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-3">Instant audio in your browser</h3>
+                        <p class="text-gray-400">Narrify turns any webpage into voice — no extra apps, no copy-paste. Stay where you are.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-left">
-                        <div class="bg-sky-100 text-sky-700 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-hover text-left">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Stay focused longer</h3>
-                        <p class="text-gray-700">Voice helps reduce screen fatigue and keeps your attention steady, even during dense reading.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-3">Stay focused longer</h3>
+                        <p class="text-gray-400">Voice helps reduce screen fatigue and keeps your attention steady, even during dense reading.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-left">
-                        <div class="bg-sky-100 text-sky-700 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-hover text-left">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-3 w-12 h-12 mb-6 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Read at your pace</h3>
-                        <p class="text-gray-700">Adjust playback speed to read faster — or slower — than your eyes can keep up.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-3">Read at your pace</h3>
+                        <p class="text-gray-400">Adjust playback speed to read faster — or slower — than your eyes can keep up.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="how-it-works" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
             <div class="container mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Your new reading shortcut, in three steps</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-100">Your new reading shortcut, in three steps</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
-                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 text-center card-hover">
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 text-center card-hover">
                         <div class="text-5xl font-bold text-sky-500 mb-4">1.</div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Highlight any block of text you want to hear.</h3>
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-3">Highlight any block of text you want to hear.</h3>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 text-center card-hover">
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 text-center card-hover">
                         <div class="text-5xl font-bold text-sky-500 mb-4">2.</div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Click the Narrify button that appears.</h3>
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-3">Click the Narrify button that appears.</h3>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 text-center card-hover">
+                    <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 text-center card-hover">
                         <div class="text-5xl font-bold text-sky-500 mb-4">3.</div>
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Focus while listening — hands-free, eyes-free.</h3>
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-3">Focus while listening — hands-free, eyes-free.</h3>
                     </div>
                 </div>
             </div>
@@ -269,25 +273,25 @@
         <section id="demo" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-gradient">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Hear it in <span class="text-sky-700">action</span></h2>
-                    <p class="text-lg text-gray-700 mt-4 max-w-xl mx-auto">Tired of skimming? Listen instead.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-100">Hear it in <span class="text-sky-500">action</span></h2>
+                    <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">Tired of skimming? Listen instead.</p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-xl border border-gray-200">
+                <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700">
                     
                     <!-- Language toggle buttons -->
                     <div class="flex justify-center mb-6">
                         <div class="inline-flex rounded-md shadow-sm" role="group">
-                            <button type="button" id="lang-en" class="py-2 px-4 text-sm font-medium text-sky-700 bg-white border border-sky-200 rounded-l-lg hover:bg-sky-50 focus:z-10 focus:ring-2 focus:ring-sky-500 active-lang">
+                            <button type="button" id="lang-en" class="py-2 px-4 text-sm font-medium text-sky-300 bg-gray-700 border border-gray-600 rounded-l-lg hover:bg-gray-600 focus:z-10 focus:ring-2 focus:ring-sky-500 active-lang">
                                 English
                             </button>
-                            <button type="button" id="lang-pl" class="py-2 px-4 text-sm font-medium text-sky-700 bg-white border border-sky-200 rounded-r-lg hover:bg-sky-50 focus:z-10 focus:ring-2 focus:ring-sky-500">
+                            <button type="button" id="lang-pl" class="py-2 px-4 text-sm font-medium text-sky-300 bg-gray-700 border-t border-b border-r border-gray-600 rounded-r-lg hover:bg-gray-600 focus:z-10 focus:ring-2 focus:ring-sky-500">
                                 Polish
                             </button>
                         </div>
                     </div>
                     
                     <div class="md:flex md:flex-col md:items-center md:space-y-6">
-                        <div id="interactiveDemoText" class="text-lg text-gray-700 leading-relaxed mb-6 md:mb-0 text-center">
+                        <div id="interactiveDemoText" class="text-lg text-gray-300 leading-relaxed mb-6 md:mb-0 text-center">
                             <!-- English version -->
                             <div id="en-text" class="demo-text-content">
                                 <span class="demo-sentence" data-start="0" data-end="3.3">Do you find it hard to stay focused when reading long articles or documents online?</span>
@@ -306,22 +310,6 @@
                             </div>
                             
                             <!-- Polish version -->
-                            <!-- <div id="pl-text" class="demo-text-content hidden">
-                                <span class="demo-sentence" data-start="0" data-end="2.5">Masz dość zmęczonych oczu i przewijania ścian tekstu?</span>
-                                
-                                <span class="demo-sentence" data-start="2.5" data-end="7">Nasza aplikacja pozwala Ci słuchać dowolnej strony internetowej — jednym kliknięciem.</span>
-                                
-                                <span class="demo-sentence" data-start="7" data-end="9.5">Bez kopiowania, bez przełączania zakładek.</span>
-                                
-                                <span class="demo-sentence" data-start="9.5" data-end="12">Po prostu zaznaczasz, klikasz, i słuchasz.</span>
-                                
-                                <span class="demo-sentence" data-start="12" data-end="13">Otwórz stronę.</span>
-                                
-                                <span class="demo-sentence" data-start="13" data-end="14">Usiądź wygodnie.</span>
-                                
-                                <span class="demo-sentence" data-start="14" data-end="16">A internet przemówi do Ciebie.</span>
-                            </div> -->
-
                             <div id="pl-text" class="demo-text-content hidden">
                                 <span class="demo-sentence" data-start="0" data-end="5">Masz trudność z utrzymaniem koncentracji podczas czytania długich artykułów czy dokumentów online?</span>
 
@@ -346,7 +334,7 @@
                                 Your browser does not support the audio element. Please try a modern browser.
                             </audio>
                             <div class="flex space-x-4">
-                                <button id="playDemoButton" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-6 rounded-lg cta-button text-lg flex items-center space-x-2">
+                                <button id="playDemoButton" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg cta-button text-lg flex items-center space-x-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                                     </svg>
@@ -361,12 +349,12 @@
                             </div>
                             
                             <div class="flex justify-center mt-4">
-                                <div class="bg-gray-100 rounded-lg p-2 inline-flex space-x-2">
-                                    <button id="speed-0.85x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">0.85x</button>
-                                    <button id="speed-1.0x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition-colors speed-active">1.0x</button>
-                                    <button id="speed-1.1x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.1x</button>
-                                    <button id="speed-1.25x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.25x</button>
-                                    <button id="speed-1.5x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.5x</button>
+                                <div class="bg-gray-700 rounded-lg p-2 inline-flex space-x-2">
+                                    <button id="speed-0.85x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-sky-100 hover:text-sky-700 transition-colors">0.85x</button>
+                                    <button id="speed-1.0x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-sky-100 hover:text-sky-700 transition-colors speed-active">1.0x</button>
+                                    <button id="speed-1.1x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.1x</button>
+                                    <button id="speed-1.25x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.25x</button>
+                                    <button id="speed-1.5x" class="speed-control-btn px-3 py-1 rounded-md text-sm font-medium text-gray-300 hover:bg-sky-100 hover:text-sky-700 transition-colors">1.5x</button>
                                 </div>
                             </div>
                             <p id="demoStatus" class="text-xs text-gray-500 mt-3 h-4"></p>
@@ -376,49 +364,49 @@
             </div>
         </section>
 
-        <section id="who-is-it-for" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="who-is-it-for" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900">
             <div class="container mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Perfect for <span class="text-sky-700">Focused Professionals</span></h2>
-                    <p class="text-lg text-gray-700 mt-4 max-w-xl mx-auto">If your day is packed with reading tasks — Narrify gives your eyes a break and your mind a boost.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-100">Perfect for <span class="text-sky-500">Focused Professionals</span></h2>
+                    <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">If your day is packed with reading tasks — Narrify gives your eyes a break and your mind a boost.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center card-hover">
-                        <div class="bg-sky-100 text-sky-700 rounded-full p-4 inline-flex mb-4">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center card-hover">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-4 inline-flex mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Knowledge workers</h3>
-                        <p class="text-gray-700 text-sm">Speed through documentation or articles without losing attention.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Knowledge workers</h3>
+                        <p class="text-gray-400 text-sm">Speed through documentation or articles without losing attention.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center card-hover">
-                        <div class="bg-sky-100 text-sky-600 rounded-full p-4 inline-flex mb-4">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center card-hover">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-4 inline-flex mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">People with screen fatigue</h3>
-                        <p class="text-gray-700 text-sm">Focus better by listening, not reading.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">People with screen fatigue</h3>
+                        <p class="text-gray-400 text-sm">Focus better by listening, not reading.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center card-hover">
-                        <div class="bg-sky-100 text-sky-600 rounded-full p-4 inline-flex mb-4">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center card-hover">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-4 inline-flex mb-4">
                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                            </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Busy multitaskers</h3>
-                        <p class="text-gray-700 text-sm">Absorb key info while moving, cooking, or commuting.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Busy multitaskers</h3>
+                        <p class="text-gray-400 text-sm">Absorb key info while moving, cooking, or commuting.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center card-hover">
-                        <div class="bg-sky-100 text-sky-600 rounded-full p-4 inline-flex mb-4">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center card-hover">
+                        <div class="bg-sky-700/30 text-sky-400 rounded-full p-4 inline-flex mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Language learners</h3>
-                        <p class="text-gray-700 text-sm">Reinforce vocabulary and pronunciation by hearing real content aloud.</p>
+                        <h3 class="text-xl font-semibold text-gray-100 mb-2">Language learners</h3>
+                        <p class="text-gray-400 text-sm">Reinforce vocabulary and pronunciation by hearing real content aloud.</p>
                     </div>
                 </div>
             </div>
@@ -427,20 +415,20 @@
         <section id="about-me" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-gradient">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">About <span class="text-sky-700">Me</span></h2>
-                    <p class="text-lg text-gray-700 mt-4 max-w-xl mx-auto">The creator behind Narrify</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-100">About <span class="text-sky-500">Me</span></h2>
+                    <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">The creator behind Narrify</p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-xl border border-gray-200">
+                <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700">
                     <div class="md:flex items-center gap-8">
                         <div class="mb-6 md:mb-0 flex-shrink-0 text-center">
                             <div class="w-40 h-55 mx-auto rounded-3xl overflow-hidden bg-gray-200 mb-4">
                                 <!-- Replace with your actual image -->
                                 <img src="public/photo2.png" alt="">
                             </div>
-                            <h3 class="text-xl font-bold text-gray-900">Marek Szkudelski</h3>
-                            <p class="text-sky-600 font-medium">Founder & Developer</p>
+                            <h3 class="text-xl font-bold text-gray-100">Marek Szkudelski</h3>
+                            <p class="text-sky-400 font-medium">Founder & Developer</p>
                         </div>
-                        <div class="text-gray-700 leading-relaxed">
+                        <div class="text-gray-300 leading-relaxed">
                             <p class="mb-4">
                                 Hello, I'm Marek, a Senior Frontend Software Engineer at Allegro with over 8 years of professional experience in programming. I've been passionate about software development since I was 15, and throughout my career I've focused on building practical, user-focused tools.
 
@@ -472,26 +460,26 @@
 
         <section id="signup" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 hero-gradient">
             <div class="container mx-auto text-center max-w-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Reclaim your focus. Double your reading speed.</h2>
-                <p class="text-lg text-gray-700 mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-6">Reclaim your focus. Double your reading speed.</h2>
+                <p class="text-lg text-gray-300 mb-10">
                     Join early testers and experience a more efficient, less exhausting way to consume web content.
                 </p>
                 <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4" id="footer-signup">
                     <label for="footer-email" class="sr-only">Email address</label>
                     <input type="email" name="email" id="footer-email" required
-                           class="flex-grow px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
+                           class="flex-grow px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
                            placeholder="you@example.com">
                     <button type="submit"
-                            class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
+                            class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
                         Get Early Access
                     </button>
                 </form>
-                <p id="footer-form-status" class="mt-4 text-sm text-gray-600 h-5"></p>
+                <p id="footer-form-status" class="mt-4 text-sm text-gray-400 h-5"></p>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-black text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto text-center">
             <p class="mb-2">Narrify &copy; <span id="currentYear"></span></p>
             <p class="text-sm mb-4">Created by [Your Name/Company Name]</p>
