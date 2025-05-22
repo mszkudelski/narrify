@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sender-form.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -132,13 +133,15 @@
                             Textaural helps you absorb online content without distractions. Listen to webpages in a natural voice — while eating, walking, or working.
                         </p>
                         
-                        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto md:mx-0 flex flex-col sm:flex-row gap-4 mb-8" id="hero-signup">
-                            <label for="hero-email" class="sr-only">Email address</label>
-                            <input type="email" name="email" id="hero-email" required
-                                class="flex-grow px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
-                                placeholder="you@example.com">
+                        <form class="max-w-md mx-auto md:mx-0 flex flex-col sm:flex-row gap-4 mb-8" id="hero-signup">
+                            <div class="sm:flex-grow w-full">
+                                <label for="hero-email" class="sr-only">Email address</label>
+                                <input type="email" name="email" id="hero-email" required
+                                    class="w-full px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
+                                    placeholder="you@example.com">
+                            </div>
                             <button type="submit"
-                                    class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
+                                    class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg flex items-center justify-center">
                                 Join the beta
                             </button>
                         </form>
@@ -360,17 +363,17 @@
                                 Your browser does not support the audio element. Please try a modern browser.
                             </audio>
                             <div class="flex space-x-4">
-                                <button id="playDemoButton" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg cta-button text-lg flex items-center space-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <button id="playDemoButton" class="play-demo-btn bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg cta-button text-lg flex items-center space-x-2">
+                                    <!-- Play icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 play-icon" viewBox="0 0 20 20" fill="currentColor">
                                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                                     </svg>
-                                    <span>Play Demo</span>
-                                </button>
-                                <button id="stopDemoButton" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg cta-button text-lg flex items-center space-x-2 hidden">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <!-- Pause icon (hidden by default) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pause-icon hidden" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clip-rule="evenodd" />
                                     </svg>
-                                    <span>Stop Demo</span>
+                                    <span class="play-text">Play Demo</span>
+                                    <span class="pause-text hidden">Pause Demo</span>
                                 </button>
                             </div>
                             
@@ -490,13 +493,15 @@
                 <p class="text-lg text-gray-300 mb-10">
                     Join early testers and experience a more efficient, less exhausting way to consume web content.
                 </p>
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4" id="footer-signup">
-                    <label for="footer-email" class="sr-only">Email address</label>
-                    <input type="email" name="email" id="footer-email" required
-                           class="flex-grow px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
-                           placeholder="you@example.com">
+                <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4" id="footer-signup">
+                    <div class="sm:flex-grow w-full">
+                        <label for="footer-email" class="sr-only">Email address</label>
+                        <input type="email" name="email" id="footer-email" required
+                               class="w-full px-5 py-3 rounded-lg border bg-gray-800 border-gray-700 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-shadow"
+                               placeholder="you@example.com">
+                    </div>
                     <button type="submit"
-                            class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg">
+                            class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg flex items-center justify-center">
                         Get Early Access
                     </button>
                 </form>
@@ -522,9 +527,6 @@
                 </a>
                 <a href="#" class="hover:text-sky-400 transition-colors">Privacy Policy</a>
             </div>
-            <p class="text-xs text-gray-400">
-                Please replace `YOUR_FORMSPREE_ID` in the form actions with your actual Formspree endpoint.
-            </p>
         </div>
     </footer>
 
@@ -585,59 +587,8 @@
             });
         }
 
-
-        // Basic Formspree AJAX submission handling
-        async function handleFormSubmit(event, formId, statusElementId) {
-            event.preventDefault();
-            const form = document.getElementById(formId);
-            const statusElement = document.getElementById(statusElementId);
-            const data = new FormData(event.target);
-            
-            statusElement.textContent = 'Sending...';
-            statusElement.classList.remove('text-green-600', 'text-red-600');
-
-            try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    statusElement.textContent = "Thanks for joining the beta! We'll be in touch.";
-                    statusElement.classList.add('text-green-600');
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            statusElement.textContent = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            statusElement.textContent = "Oops! There was a problem submitting your form.";
-                        }
-                        statusElement.classList.add('text-red-600');
-                    })
-                }
-            } catch (error) {
-                statusElement.textContent = "Oops! There was a problem submitting your form.";
-                statusElement.classList.add('text-red-600');
-            }
-        }
-
-        const heroForm = document.getElementById('hero-signup');
-        if (heroForm) {
-            heroForm.addEventListener("submit", (event) => handleFormSubmit(event, 'hero-signup', 'hero-form-status'));
-        }
-
-        const footerForm = document.getElementById('footer-signup');
-        if (footerForm) {
-            footerForm.addEventListener("submit", (event) => handleFormSubmit(event, 'footer-signup', 'footer-form-status'));
-        }
-
         // Interactive Demo Section Logic
         const playDemoButton = document.getElementById('playDemoButton');
-        const stopDemoButton = document.getElementById('stopDemoButton');
         const demoAudio = document.getElementById('demoAudio');
         const langEnButton = document.getElementById('lang-en');
         const langPlButton = document.getElementById('lang-pl');
@@ -701,9 +652,7 @@
                             demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
                         }
                         playDemoButton.disabled = false;
-                        playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                        stopDemoButton.disabled = true;
-                        stopDemoButton.classList.add('opacity-50', 'cursor-not-allowed', 'hidden');
+                        playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed', 'is-playing');
                     }
 
                     // Switch to English
@@ -883,6 +832,11 @@
             }
         }
     </script>
-
+    
+    <!-- Sender form integration -->
+    <script src="js/sender-form.js"></script>
+    
+    <!-- Demo button fix -->
+    <script src="js/demo-button-fix.js"></script>
 </body>
 </html>

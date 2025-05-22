@@ -1,0 +1,37 @@
+/* Sender Form Styles */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form status styles */
+#footer-form-status, #hero-form-status {
+  min-height: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+/* Button state styles */
+#footer-signup button:disabled,
+#hero-signup button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Demo button states */
+#playDemoButton.is-playing .play-icon,
+#playDemoButton.is-playing .play-text {
+  display: none;
+}
+
+#playDemoButton:not(.is-playing) .pause-icon,
+#playDemoButton:not(.is-playing) .pause-text {
+  display: none;
+}

@@ -56,6 +56,27 @@ body {
   animation: bounce 2s infinite, pulse 2s infinite;
 }
 
+/* Play/Pause toggle button styles */
+.play-demo-btn span.play-text,
+.play-demo-btn svg.play-icon {
+  display: flex;
+}
+
+.play-demo-btn span.pause-text,
+.play-demo-btn svg.pause-icon {
+  display: none;
+}
+
+.play-demo-btn.is-playing span.play-text,
+.play-demo-btn.is-playing svg.play-icon {
+  display: none;
+}
+
+.play-demo-btn.is-playing span.pause-text,
+.play-demo-btn.is-playing svg.pause-icon {
+  display: flex;
+}
+
 .hero-gradient {
     background-color: #0ea5e9; /* Sky-500 as fallback */
     background-image:
