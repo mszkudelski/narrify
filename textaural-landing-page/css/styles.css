@@ -32,6 +32,26 @@ body {
   }
 }
 
+/* Try me pointer styling */
+.try-me-pointer {
+  transform: translateY(-50%);
+}
+
+.try-me-btn {
+  animation: smooth-jump 2s ease-in-out infinite;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+@keyframes smooth-jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .animate-bounce {
   animation: bounce 2s infinite, pulse 2s infinite;
 }

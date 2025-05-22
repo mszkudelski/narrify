@@ -293,7 +293,16 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-100">Hear it in <span class="text-sky-500">action</span></h2>
                     <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">Tired of skimming? Listen instead.</p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700">
+                <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700 relative">
+                    <!-- Try Me Jumping Pointer -->
+                    <div class="try-me-pointer hidden md:flex absolute -left-64 top-1/2 items-center">
+                        <button class="try-me-btn py-3 px-6 text-base font-medium text-sky-300 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 hover:text-white transition-colors flex items-center space-x-2">
+                            <span>Try me!</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </button>
+                    </div>
                     
                     <!-- Language toggle buttons -->
                     <div class="flex justify-center mb-6">
@@ -435,10 +444,10 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-100">About <span class="text-sky-500">Me</span></h2>
                     <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">The creator behind Textaural</p>
                 </div>
-                <div class="max-w-3xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700">
+                <div class="max-w-6xl mx-auto bg-gray-800 p-8 md:p-12 rounded-xl shadow-xl border border-gray-700">
                     <div class="md:flex items-center gap-8">
                         <div class="mb-6 md:mb-0 flex-shrink-0 text-center">
-                            <div class="w-40 h-55 mx-auto rounded-3xl overflow-hidden bg-gray-200 mb-4">
+                            <div class="w-64 mx-auto rounded-3xl overflow-hidden bg-gray-200 mb-4">
                                 <!-- Replace with your actual image -->
                                 <img src="public/photo2.png" alt="">
                             </div>
@@ -531,6 +540,23 @@
 
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Try me pointer functionality
+        const tryMePointer = document.querySelector('.try-me-pointer button');
+        const playDemoBtn = document.getElementById('playDemoButton');
+        
+        if (tryMePointer && playDemoBtn) {
+            tryMePointer.addEventListener('click', () => {
+                playDemoBtn.classList.add('ring-4', 'ring-sky-500', 'ring-opacity-75');
+                setTimeout(() => {
+                    playDemoBtn.classList.remove('ring-4', 'ring-sky-500', 'ring-opacity-75');
+                }, 2000);
+                
+                if (typeof playDemoButton.click === 'function') {
+                    playDemoBtn.click();
+                }
+            });
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
