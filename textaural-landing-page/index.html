@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/sender-form.css">
+    <!-- Configuration -->
+    <script src="js/config.js"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2RRW3114D"></script>
 <script>
@@ -15,7 +17,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-K2RRW3114D');
+  // Use config for analytics ID
+  gtag('config', window.CONFIG?.GOOGLE_ANALYTICS_ID || 'G-K2RRW3114D');
 </script>
     <style>
         body {

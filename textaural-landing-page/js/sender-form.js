@@ -1,6 +1,6 @@
 // Sender API integration
-const SENDER_API_KEY = 'YOUR_SENDER_API_KEY'; // Replace with your actual API key
-const SENDER_GROUP_ID = 'YOUR_SENDER_GROUP_ID'; // Replace with your actual group ID
+const SENDER_API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjc2YWEzNjgzZDFiYjBiZDY4YmNhMGM5Mjk4YzAwY2YyZjI5MDUyYThmMGFjMGQ4MTM5ZWFmY2JjZGUyNTk2MDlhZDMyOGNmN2Y3ZmRmNDgiLCJpYXQiOiIxNzM1NjYwNDg5Ljg0MzY0MCIsIm5iZiI6IjE3MzU2NjA0ODkuODQzNjQzIiwiZXhwIjoiNDg4OTI2MDQ4OS44NDIwMzEiLCJzdWIiOiI5MzU2NzUiLCJzY29wZXMiOltdfQ.ScMjvHX4CQiXEKTZIOjASVDpkfRZJqmTtlUlnfkApL6PWUXagwNbBqgsvNqaczz2YBfx7ENWACjbxf2jV1Jbcg'; // Replace with your actual API key
+const SENDER_GROUP_ID = 'ej6Ylz'; // Replace with your actual group ID
 
 document.addEventListener('DOMContentLoaded', () => {
   const footerForm = document.getElementById('footer-signup');
