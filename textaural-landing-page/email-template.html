@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textaural Email</title>
+    <style>
+        /* Reset styles for email clients */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #D1D5DB;
+            background-color: #111827;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1F2937;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #3949AB 0%, #3B82F6 50%, #38BDF8 100%);
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .logo {
+            margin-bottom: 16px;
+        }
+        
+        .logo svg {
+            width: 200px;
+            height: auto;
+        }
+        
+        .content {
+            padding: 32px 24px;
+        }
+        
+        .text-section {
+            margin-bottom: 32px;
+        }
+        
+        .text-section h1 {
+            color: #F9FAFB;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .text-section p {
+            color: #D1D5DB;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .question-section {
+            background-color: #2D3748;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            border-left: 4px solid #38BDF8;
+        }
+        
+        .question-section h2 {
+            color: #F9FAFB;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .question-section p {
+            color: #9CA3AF;
+            font-size: 15px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        .cta-primary {
+            background-color: #38BDF8;
+            color: #FFFFFF;
+        }
+        
+        .cta-secondary {
+            background-color: #2D3748;
+            color: #38BDF8;
+            border: 1px solid #38BDF8;
+        }
+        
+        .footer {
+            background-color: #111827;
+            padding: 16px;
+            text-align: center;
+            border-top: 1px solid #374151;
+        }
+        
+        .footer p {
+            color: #6B7280;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .footer a {
+            color: #38BDF8;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .email-container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header {
+                padding: 24px 16px;
+            }
+            
+            .content {
+                padding: 24px 16px;
+            }
+            
+            .text-section h1 {
+                font-size: 24px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header with Logo -->
+        <div class="header">
+            <div class="logo">
+                <img src="https://narrify.com/textaural-landing-page/public/textaural-logo-waves.png" alt="Textaural" width="60" height="60" style="display: block; margin: 0 auto;">
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Text Section -->
+            <div class="text-section">
+                <h1>Let your ears take over</h1>
+                <p>Hi there,</p>
+               <p>Thanks for signing up for <strong>Textaural</strong> — a browser extension that turns any webpage into natural, high-quality audio. Whether you’re working, studying, or just relaxing, Textaural helps you absorb online content without the screen fatigue.</p>
+<p>To make sure we build the features you really need, we’d love to know:</p>
+</div>
+            
+                   <!-- Question Section -->
+            <div class="question-section">
+                <h2>How do you plan to use Textaural?</h2>
+                <p>We’d love to understand your needs better. Select the purpose that best matches how you intend to use the app:</p>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-buttons">
+                    <a href="https://textaural.com/form?use=work" class="cta-button cta-primary">
+                        💼 For work
+                    </a>
+                    <a href="https://textaural.com/form?use=learning" class="cta-button cta-secondary">
+                        🎓 For learning
+                    </a>
+                    <a href="https://textaural.com/form?use=hobby" class="cta-button cta-secondary">
+                        🧘‍♂️ For yourself
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-section">
+                <p>Both options will take you to our early access signup where you can try Textaural for free during our beta period.</p>
+                <p>We're building something special, and we'd love to have you as part of our community.</p>
+                <p>Best regards,<br>
+                <strong>Marek Szkudelski</strong><br>
+                Founder, Textaural</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Textaural. All rights reserved.</p>
+            <p>
+                <a href="https://textaural.com">Visit our website</a> | 
+                <a href="{$unsubscribe_link}">Unsubscribe</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

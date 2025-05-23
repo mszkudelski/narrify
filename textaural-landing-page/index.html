@@ -22,6 +22,17 @@
         .cta-button {
             transition: all 0.3s ease;
         }
+        .logo-animation {
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+        .logo-animation:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+        }
+        /* SVG text animation */
+        .logo-animation:hover text {
+            filter: brightness(1.2);
+        }
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -97,7 +108,9 @@
 
     <header class="sticky top-0 bg-gray-900/80 backdrop-blur-md z-50 shadow-sm py-4 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-sky-500">Textaural</a>
+            <a href="#" class="flex items-center transition-opacity py-1">
+                <img src="public/textaural-logo.svg" alt="Textaural" class="h-10 sm:h-14 logo-animation" width="auto" />
+            </a>
             <nav class="hidden md:flex space-x-6 items-center">
                 <a href="#problem" class="text-gray-300 hover:text-sky-400 transition-colors">Problem</a>
                 <a href="#how-it-works" class="text-gray-300 hover:text-sky-400 transition-colors">How it Works</a>
@@ -142,7 +155,7 @@
                             </div>
                             <button type="submit"
                                     class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg flex items-center justify-center">
-                                Join the beta
+                                Join beta
                             </button>
                         </form>
                         <p id="hero-form-status" class="mt-4 text-sm text-gray-400 h-5"></p>
@@ -265,6 +278,11 @@
                         <p class="text-gray-400">Adjust playback speed to read faster — or slower — than your eyes can keep up.</p>
                     </div>
                 </div>
+                <div class="mt-12 text-center">
+                    <a href="#signup" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg inline-flex items-center justify-center">
+                        Get early access
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -286,6 +304,11 @@
                         <div class="text-5xl font-bold text-sky-500 mb-4">3.</div>
                         <h3 class="text-2xl font-semibold text-gray-100 mb-3">Focus while listening — hands-free, eyes-free.</h3>
                     </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="#signup" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg inline-flex items-center justify-center">
+                        Join beta
+                    </a>
                 </div>
             </div>
         </section>
@@ -325,11 +348,11 @@
                             <div id="en-text" class="demo-text-content">
                                 <span class="demo-sentence" data-start="0" data-end="3.3">Do you find it hard to stay focused when reading long articles or documents online?</span>
 
-                                <span class="demo-sentence" data-start="3.3" data-end="8">With Textaural, you don't have to force your eyes to follow lines of text anymore.</span>
+                                <span class="demo-sentence" data-start="3.3" data-end="8">With our app, you don't have to force your eyes to follow lines of text anymore.</span>
 
                                 <span class="demo-sentence" data-start="8" data-end="11">Just highlight what you want to hear, click the button, and listen.</span>
 
-                                <span class="demo-sentence" data-start="11" data-end="18">Textaural turns any webpage into clear, natural audio — so you can absorb content while walking, eating, or resting your eyes.</span>
+                                <span class="demo-sentence" data-start="11" data-end="18">Our app turns any webpage into clear, natural audio — so you can absorb content while walking, eating, or resting your eyes.</span>
 
                                 <span class="demo-sentence" data-start="18" data-end="23">You can even speed it up, slow it down, or pause anytime.</span>
 
@@ -390,6 +413,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-12 text-center">
+                    <a href="#signup" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg inline-flex items-center justify-center">
+                        Get early access
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -439,6 +467,11 @@
                     </div>
                 </div>
             </div>
+              <div class="mt-12 text-center">
+                    <a href="#signup" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg inline-flex items-center justify-center">
+                        Join beta
+                    </a>
+                </div>
         </section>
 
         <section id="about-me" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-gradient">
