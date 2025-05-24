@@ -119,3 +119,25 @@ body {
 }
 
 /* Add other global styles or utility classes below */
+
+/* Language toggle button active state */
+.active-lang {
+    background-color: #0ea5e9 !important; /* sky-500 */
+    color: white !important;
+    border-color: #0ea5e9 !important;
+}
+
+/* Demo text highlighting */
+.sentence-highlight {
+    background-color: rgba(14, 165, 233, 0.3) !important; /* sky-500 with opacity */
+    color: #e0f2fe !important; /* sky-100 */
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Speed control active button */
+.speed-active {
+    background-color: #374151 !important; /* gray-700 */
+    color: white !important;
+}
