@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/privacy-popup.css">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2RRW3114D"></script>
 <script>
@@ -186,6 +187,23 @@
     </style>
 </head>
 <body class="bg-slate-900">
+    <!-- Privacy Popup -->
+    <div id="privacy-popup" class="fixed bottom-4 left-4 right-4 bg-gray-800 border border-gray-700 rounded-lg p-4 shadow-xl z-50 max-w-md mx-auto md:left-auto md:mx-0 md:max-w-sm">
+        <div class="flex flex-col space-y-3">
+            <p class="text-sm text-gray-300">
+                We use cookies to enhance your experience and analyze website traffic. By continuing to use this site, you agree to our Privacy Policy.
+            </p>
+            <div class="flex space-x-2">
+                <button id="accept-privacy" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex-1">
+                    Accept
+                </button>
+                <a href="privacy.html" class="text-sky-400 hover:text-sky-300 px-4 py-2 text-sm font-medium transition-colors text-center">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+    
     <div class="page-container">
         <div class="content-container">
             <div class="card">
@@ -242,7 +260,7 @@
                     <div class="text-center mt-8">
                         <p class="mb-6">We'll email you shortly with details on how to install the beta extension. Keep an eye on your inbox!</p>
                         
-                        <a href="/" class="cta-button">
+                        <a href="index.html" class="cta-button">
                             Return to Homepage
                         </a>
                     </div>
@@ -253,11 +271,15 @@
         <footer class="footer">
             <p>© 2025 Textaural. All rights reserved.</p>
             <p class="mt-2">
-                <a href="/">Home</a> |
+                <a href="index.html">Home</a> |
+                <a href="privacy.html">Privacy Policy</a> |
                 <a href="mailto:contact@textaural.com">Contact Us</a>
             </p>
         </footer>
     </div>
+
+    <!-- Privacy popup -->
+    <script src="js/privacy-popup.js"></script>
 
 </body>
 </html>

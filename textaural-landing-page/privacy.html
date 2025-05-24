@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Textaural</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/privacy-popup.css">
+    <!-- Configuration -->
+    <script src="js/config.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2RRW3114D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', window.CONFIG?.GOOGLE_ANALYTICS_ID || 'G-K2RRW3114D');
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+             background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+        .section-gradient {
+             background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        *:focus-visible {
+            outline: 2px solid #0ea5e9;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 antialiased">
+    <!-- Privacy Popup -->
+    <div id="privacy-popup" class="fixed bottom-4 left-4 right-4 bg-gray-800 border border-gray-700 rounded-lg p-4 shadow-xl z-50 max-w-md mx-auto md:left-auto md:mx-0 md:max-w-sm">
+        <div class="flex flex-col space-y-3">
+            <p class="text-sm text-gray-300">
+                We use cookies to enhance your experience and analyze website traffic. By continuing to use this site, you agree to our Privacy Policy.
+            </p>
+            <div class="flex space-x-2">
+                <button id="accept-privacy" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex-1">
+                    Accept
+                </button>
+                <a href="privacy.html" class="text-sky-400 hover:text-sky-300 px-4 py-2 text-sm font-medium transition-colors text-center">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 bg-gray-900/80 backdrop-blur-md z-50 shadow-sm py-4 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="public/textaural-logo-waves.png" alt="Textaural" class="w-8 h-8">
+                    <span class="text-xl font-bold text-sky-400 group-hover:text-sky-300 transition-colors">Textaural</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-sky-400 transition-colors">Home</a>
+                <a href="index.html#demo" class="text-gray-300 hover:text-sky-400 transition-colors">Demo</a>
+                <a href="index.html#signup" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg cta-button">Join Beta</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-gradient min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto max-w-4xl">
+                <!-- Return to Homepage Button -->
+                <div class="mb-8">
+                    <a href="index.html" class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-colors group">
+                        <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Return to Homepage
+                    </a>
+                </div>
+
+                <!-- Privacy Policy Content -->
+                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700 p-8 md:p-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-100 mb-8">Privacy Policy</h1>
+                    
+                    <div class="prose prose-invert max-w-none">
+                        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                            Last updated: <span class="text-sky-400">January 2025</span>
+                        </p>
+
+                        <div class="space-y-8">
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">1. Information We Collect</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We collect information you provide directly to us, such as when you:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Sign up for our beta program</li>
+                                        <li>Subscribe to our newsletter</li>
+                                        <li>Contact us for support</li>
+                                        <li>Use our browser extension</li>
+                                    </ul>
+                                    <p>This information may include your email address, name, and usage preferences.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">2. How We Use Your Information</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We use the information we collect to:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Provide and improve our services</li>
+                                        <li>Send you updates about Textaural</li>
+                                        <li>Respond to your questions and provide support</li>
+                                        <li>Analyze usage patterns to enhance user experience</li>
+                                        <li>Comply with legal obligations</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">3. Information Sharing</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>With your explicit consent</li>
+                                        <li>To comply with legal requirements</li>
+                                        <li>To protect our rights and safety</li>
+                                        <li>With service providers who assist us in operating our website and services</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">4. Data Security</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                                    <p>However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">5. Cookies and Tracking</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We use cookies and similar tracking technologies to:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Improve website functionality</li>
+                                        <li>Analyze website traffic and usage patterns</li>
+                                        <li>Remember your preferences</li>
+                                        <li>Provide personalized content</li>
+                                    </ul>
+                                    <p>You can control cookie settings through your browser preferences.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">6. Your Rights</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>You have the right to:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Access your personal information</li>
+                                        <li>Correct inaccurate information</li>
+                                        <li>Delete your personal information</li>
+                                        <li>Opt-out of marketing communications</li>
+                                        <li>Data portability</li>
+                                    </ul>
+                                    <p>To exercise these rights, please contact us at <a href="mailto:privacy@textaural.com" class="text-sky-400 hover:text-sky-300">privacy@textaural.com</a>.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">7. Data Retention</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">8. Children's Privacy</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">9. Changes to This Policy</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h2 class="text-2xl font-bold text-gray-100 mb-4">10. Contact Us</h2>
+                                <div class="text-gray-300 space-y-4">
+                                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Email: <a href="mailto:privacy@textaural.com" class="text-sky-400 hover:text-sky-300">privacy@textaural.com</a></li>
+                                        <li>Website: <a href="index.html" class="text-sky-400 hover:text-sky-300">textaural.com</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Return Button -->
+                        <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                            <a href="index.html" class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg cta-button text-lg inline-flex items-center justify-center">
+                                Return to Homepage
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">Textaural &copy; <span id="currentYear"></span></p>
+            <p class="text-sm mb-4">Created by Marek Szkudelski</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-sky-400 transition-colors" aria-label="Twitter">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-sky-400 transition-colors" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="privacy.html" class="hover:text-sky-400 transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- Privacy popup -->
+    <script src="js/privacy-popup.js"></script>
+</body>
+</html>

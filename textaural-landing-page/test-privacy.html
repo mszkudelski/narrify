@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Features Test - Textaural</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-white mb-8">Privacy Features Test Page</h1>
+        
+        <div class="space-y-6">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">✅ Features Implemented</h2>
+                <ul class="space-y-2 text-gray-300">
+                    <li>✅ <strong>Privacy Policy Page:</strong> <a href="privacy.html" class="text-sky-400 hover:text-sky-300 underline">privacy.html</a></li>
+                    <li>✅ <strong>Return to Homepage Button:</strong> Present on privacy policy page</li>
+                    <li>✅ <strong>Header and Footer:</strong> Consistent across all pages</li>
+                    <li>✅ <strong>Privacy Policy Links:</strong> Added under both signup forms</li>
+                    <li>✅ <strong>Privacy Popup:</strong> Appears on all pages except privacy policy page</li>
+                    <li>✅ <strong>Accept Button:</strong> Saves preference in localStorage</li>
+                    <li>✅ <strong>Responsive Design:</strong> Works on mobile and desktop</li>
+                    <li>✅ <strong>Smooth Animations:</strong> Slide in/out effects for popup</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">🧪 Test Privacy Popup</h2>
+                <div class="space-y-4">
+                    <button id="clear-storage" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+                        Clear Privacy Acceptance (Test Popup)
+                    </button>
+                    <button id="reload-page" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded ml-2">
+                        Reload Page
+                    </button>
+                    <p class="text-sm text-gray-400">
+                        Click "Clear Privacy Acceptance" then "Reload Page" to test the privacy popup appearance.
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        Current privacy status: <span id="privacy-status" class="font-semibold"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">📋 Privacy Policy Content</h2>
+                <p class="text-gray-300 mb-4">The privacy policy includes:</p>
+                <ul class="list-disc pl-6 space-y-1 text-gray-300">
+                    <li>Information collection practices</li>
+                    <li>How data is used</li>
+                    <li>Information sharing policies</li>
+                    <li>Data security measures</li>
+                    <li>Cookie and tracking information</li>
+                    <li>User rights and controls</li>
+                    <li>Data retention policies</li>
+                    <li>Children's privacy protection</li>
+                    <li>Policy update procedures</li>
+                    <li>Contact information</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">🔗 Quick Links</h2>
+                <div class="space-y-2">
+                    <a href="index.html" class="block text-sky-400 hover:text-sky-300 underline">🏠 Main Landing Page</a>
+                    <a href="privacy.html" class="block text-sky-400 hover:text-sky-300 underline">📜 Privacy Policy Page</a>
+                    <a href="thank-you.html" class="block text-sky-400 hover:text-sky-300 underline">🙏 Thank You Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test functionality
+        const clearButton = document.getElementById('clear-storage');
+        const reloadButton = document.getElementById('reload-page');
+        const statusSpan = document.getElementById('privacy-status');
+
+        function updateStatus() {
+            const hasAccepted = localStorage.getItem('privacyAccepted');
+            statusSpan.textContent = hasAccepted ? 'Accepted' : 'Not accepted';
+            statusSpan.className = hasAccepted ? 'font-semibold text-green-400' : 'font-semibold text-red-400';
+        }
+
+        updateStatus();
+
+        clearButton.addEventListener('click', () => {
+            localStorage.removeItem('privacyAccepted');
+            updateStatus();
+            alert('Privacy acceptance cleared! Click "Reload Page" to test the popup.');
+        });
+
+        reloadButton.addEventListener('click', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>

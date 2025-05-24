@@ -1,0 +1,28 @@
+/* Privacy Popup Styles */
+#privacy-popup {
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease-out;
+}
+
+#privacy-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure privacy popup has proper z-index and styling */
+#privacy-popup {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+/* Make sure the popup works well on mobile */
+@media (max-width: 768px) {
+    #privacy-popup {
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+        margin: 0;
+    }
+}
