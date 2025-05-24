@@ -141,3 +141,21 @@ body {
     background-color: #374151 !important; /* gray-700 */
     color: white !important;
 }
+
+/* Mobile responsive fixes for button positioning */
+@media (max-width: 640px) {
+    .hero-gradient {
+        padding-bottom: 8rem; /* Extra padding to ensure scroll button doesn't overlap */
+    }
+    
+    /* Ensure adequate spacing on very small screens */
+    .hero-gradient .container {
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-gradient {
+        padding-bottom: 10rem; /* Even more padding for very small screens */
+    }
+}
