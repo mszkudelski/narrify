@@ -366,7 +366,7 @@
 
                                 <span class="demo-sentence" data-start="11" data-end="18">Our app turns any webpage into clear, natural audio — so you can absorb content while walking, eating, or resting your eyes.</span>
 
-                                <span class="demo-sentence" data-start="18" data-end="23">You can even speed it up, slow it down, or pause anytime.</span>
+                                <span class="demo-sentence" data-start="18" data-end="22">You can even speed it up, slow it down, or pause anytime.</span>
 
                                 <span class="demo-sentence" data-start="22" data-end="25">No switching apps. No distractions.</span>
 
@@ -693,11 +693,23 @@
                     if (!demoAudio.paused) {
                         demoAudio.pause();
                         demoAudio.currentTime = 0;
-                        if (currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                            demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                        if (currentSentenceIndex !== -1) {
+                            const currentSentences = document.querySelectorAll('#pl-text .demo-sentence');
+                            if (currentSentences[currentSentenceIndex]) {
+                                currentSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                            }
                         }
-                        playDemoButton.disabled = false;
-                        playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed', 'is-playing');
+                        // Reset button to play state
+                        const playIcon = playDemoButton.querySelector('.play-icon');
+                        const pauseIcon = playDemoButton.querySelector('.pause-icon');
+                        const playText = playDemoButton.querySelector('.play-text');
+                        const pauseText = playDemoButton.querySelector('.pause-text');
+                        
+                        playDemoButton.classList.remove('is-playing');
+                        if (pauseIcon) pauseIcon.classList.add('hidden');
+                        if (playIcon) playIcon.classList.remove('hidden');
+                        if (pauseText) pauseText.classList.add('hidden');
+                        if (playText) playText.classList.remove('hidden');
                     }
 
                     // Switch to English
@@ -728,13 +740,23 @@
                     if (!demoAudio.paused) {
                         demoAudio.pause();
                         demoAudio.currentTime = 0;
-                        if (currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                            demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                        if (currentSentenceIndex !== -1) {
+                            const currentSentences = document.querySelectorAll('#en-text .demo-sentence');
+                            if (currentSentences[currentSentenceIndex]) {
+                                currentSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                            }
                         }
-                        playDemoButton.disabled = false;
-                        playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                        stopDemoButton.disabled = true;
-                        stopDemoButton.classList.add('opacity-50', 'cursor-not-allowed', 'hidden');
+                        // Reset button to play state
+                        const playIcon = playDemoButton.querySelector('.play-icon');
+                        const pauseIcon = playDemoButton.querySelector('.pause-icon');
+                        const playText = playDemoButton.querySelector('.play-text');
+                        const pauseText = playDemoButton.querySelector('.pause-text');
+                        
+                        playDemoButton.classList.remove('is-playing');
+                        if (pauseIcon) pauseIcon.classList.add('hidden');
+                        if (playIcon) playIcon.classList.remove('hidden');
+                        if (pauseText) pauseText.classList.add('hidden');
+                        if (playText) playText.classList.remove('hidden');
                     }
 
                     // Switch to Polish
@@ -760,45 +782,52 @@
             updateLanguageButtons();
         }
 
-        if (playDemoButton && demoAudio && demoSentences.length > 0 && stopDemoButton) {
+        if (playDemoButton && demoAudio && demoSentences.length > 0) {
+            const playIcon = playDemoButton.querySelector('.play-icon');
+            const pauseIcon = playDemoButton.querySelector('.pause-icon');
+            const playText = playDemoButton.querySelector('.play-text');
+            const pauseText = playDemoButton.querySelector('.pause-text');
+            
             playDemoButton.addEventListener('click', () => {
-                // Clear any existing highlights
-                demoSentences.forEach(s => s.classList.remove('sentence-highlight'));
-                currentSentenceIndex = -1;
-                
-                // Update button state
-                playDemoButton.disabled = true;
-                playDemoButton.classList.add('opacity-50', 'cursor-not-allowed');
-                stopDemoButton.classList.remove('hidden');
-                stopDemoButton.disabled = false;
-                stopDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                if(demoStatus) demoStatus.textContent = "Playing demo...";
+                if (demoAudio.paused) {
+                    // Clear any existing highlights
+                    const currentSentences = currentLanguage === 'en' ? 
+                        document.querySelectorAll('#en-text .demo-sentence') : 
+                        document.querySelectorAll('#pl-text .demo-sentence');
+                    currentSentences.forEach(s => s.classList.remove('sentence-highlight'));
+                    currentSentenceIndex = -1;
+                    
+                    // Switch to playing state
+                    playDemoButton.classList.add('is-playing');
+                    if (playIcon) playIcon.classList.add('hidden');
+                    if (pauseIcon) pauseIcon.classList.remove('hidden');
+                    if (playText) playText.classList.add('hidden');
+                    if (pauseText) pauseText.classList.remove('hidden');
+                    if(demoStatus) demoStatus.textContent = "Playing demo...";
 
-                // Reset and play audio
-                demoAudio.currentTime = 0;
-                demoAudio.play().catch(error => {
-                    console.error("Error playing audio:", error);
-                    if(demoStatus) demoStatus.textContent = "Error playing audio.";
-                     playDemoButton.disabled = false;
-                     playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                     stopDemoButton.classList.add('hidden');
-                     stopDemoButton.disabled = true;
-                     stopDemoButton.classList.add('opacity-50', 'cursor-not-allowed');
-                });
-            });
-
-            stopDemoButton.addEventListener('click', () => {
-                demoAudio.pause();
-                demoAudio.currentTime = 0;
-                if (currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                    demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                    // Reset and play audio
+                    demoAudio.currentTime = 0;
+                    demoAudio.play().catch(error => {
+                        console.error("Error playing audio:", error);
+                        if(demoStatus) demoStatus.textContent = "Error playing audio.";
+                        // Reset button state on error
+                        playDemoButton.classList.remove('is-playing');
+                        if (pauseIcon) pauseIcon.classList.add('hidden');
+                        if (playIcon) playIcon.classList.remove('hidden');
+                        if (pauseText) pauseText.classList.add('hidden');
+                        if (playText) playText.classList.remove('hidden');
+                    });
+                } else {
+                    // Pause audio
+                    demoAudio.pause();
+                    // Switch to paused state
+                    playDemoButton.classList.remove('is-playing');
+                    if (pauseIcon) pauseIcon.classList.add('hidden');
+                    if (playIcon) playIcon.classList.remove('hidden');
+                    if (pauseText) pauseText.classList.add('hidden');
+                    if (playText) playText.classList.remove('hidden');
+                    if(demoStatus) demoStatus.textContent = "Demo paused.";
                 }
-                currentSentenceIndex = -1;
-                if(demoStatus) demoStatus.textContent = "Demo stopped.";
-                playDemoButton.disabled = false;
-                playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                stopDemoButton.disabled = true;
-                stopDemoButton.classList.add('opacity-50', 'cursor-not-allowed', 'hidden');
             });
 
             demoAudio.addEventListener('timeupdate', () => {
@@ -817,8 +846,8 @@
                     if (currentTime >= start && currentTime < end) {
                         if (currentSentenceIndex !== index) {
                             // Remove highlight from previous sentence if there was one
-                            if (currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                                demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                            if (currentSentenceIndex !== -1 && activeSentences[currentSentenceIndex]) {
+                                activeSentences[currentSentenceIndex].classList.remove('sentence-highlight');
                             }
                             // Highlight current sentence
                             sentence.classList.add('sentence-highlight');
@@ -830,23 +859,36 @@
 
                 // If no sentence is active (e.g., between sentences or after the last one)
                 // and a sentence was previously highlighted, remove its highlight.
-                if (!activeSentenceFound && currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                     demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                if (!activeSentenceFound && currentSentenceIndex !== -1 && activeSentences[currentSentenceIndex]) {
+                     activeSentences[currentSentenceIndex].classList.remove('sentence-highlight');
                      currentSentenceIndex = -1;
                 }
             });
 
             demoAudio.onended = () => {
+                // Get current sentence elements
+                const activeSentences = currentLanguage === 'en' ? 
+                    document.querySelectorAll('#en-text .demo-sentence') : 
+                    document.querySelectorAll('#pl-text .demo-sentence');
+                    
                 // Ensure all highlights are removed when audio ends
-                if (currentSentenceIndex !== -1 && demoSentences[currentSentenceIndex]) {
-                    demoSentences[currentSentenceIndex].classList.remove('sentence-highlight');
+                if (currentSentenceIndex !== -1 && activeSentences[currentSentenceIndex]) {
+                    activeSentences[currentSentenceIndex].classList.remove('sentence-highlight');
                 }
                 currentSentenceIndex = -1; // Reset for next play
                 if(demoStatus) demoStatus.textContent = "Demo finished.";
-                playDemoButton.disabled = false;
-                playDemoButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                stopDemoButton.disabled = true;
-                stopDemoButton.classList.add('opacity-50', 'cursor-not-allowed', 'hidden');
+                
+                // Reset button to play state
+                const playIcon = playDemoButton.querySelector('.play-icon');
+                const pauseIcon = playDemoButton.querySelector('.pause-icon');
+                const playText = playDemoButton.querySelector('.play-text');
+                const pauseText = playDemoButton.querySelector('.pause-text');
+                
+                playDemoButton.classList.remove('is-playing');
+                if (pauseIcon) pauseIcon.classList.add('hidden');
+                if (playIcon) playIcon.classList.remove('hidden');
+                if (pauseText) pauseText.classList.add('hidden');
+                if (playText) playText.classList.remove('hidden');
             };
             
             // Playback speed control functionality
